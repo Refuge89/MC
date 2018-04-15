@@ -128,7 +128,7 @@ class boss_majordomo : public CreatureScript
                                 events.ScheduleEvent(EVENT_BLAST_WAVE, 10000);
                                 break;
                             case EVENT_TELEPORT:
-								if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 1))
+								if (Unit* target = me->SelectNearestPlayer(500.0f)) //(Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 1))
 								{
 									DoCast(target, SPELL_TELEPORT);
 									target->NearTeleportTo(736.82, -1176.237, -119.007, 2.966);
